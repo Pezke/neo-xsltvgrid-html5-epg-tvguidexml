@@ -153,6 +153,7 @@ var languagefile = 'lang/'+language+'.js'
 document.write('<script type="text/javascript" src="'+languagefile+'"><\/script>') 
 
 var myDate=new Date(currenttime);
+myDate.setHours(myDate.getHours() - 2);
 myDate.setMinutes(myDate.getMinutes() + (60 - offsetminutes));
 
 if(dailyfiles.toString()=="true"){
@@ -278,13 +279,14 @@ function Init(dl,ch,cd,cm,cy,offset) {
 	document.getElementById('loading').style.display="block";
 	document.getElementById("tvframe").style.display="none";
 	document.getElementById("tvframe").innerHTML = "";
+	
 	var startDate=new Date(cy,cm-1,cd,ch,0,0);
 	myDate=new Date(cy,cm-1,cd,ch,0,0);
 	var endDate=new Date(cy,cm-1,cd,ch,0,0);
 	endDate.setHours(endDate.getHours()+dl);
 	var prevDate=new Date(cy,cm-1,cd,ch,0,0);
 	prevDate.setHours(prevDate.getHours()-dl);
-	
+
 	fileDate=startDate.getDate();
 	if (fileDate < 10) {
 		fileDate = "0"+fileDate;

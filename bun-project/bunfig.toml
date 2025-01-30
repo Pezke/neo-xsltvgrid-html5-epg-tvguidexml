@@ -1,0 +1,8 @@
+# Contents of /bun-project/bun-project/bunfig.toml
+
+name = "bun-project"
+type = "web"
+entry = "src/app.ts"
+public = "public"
+port = 3000
+```
